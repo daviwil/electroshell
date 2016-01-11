@@ -24,7 +24,15 @@ Install prerequisites by running the following command:
 
 `npm install`
 
-Now you should be able to run the console:
+Compile the code by running the following command:
+
+`npm run compile`
+
+You can also watch all TypeScript files for changes and have them be recompiled automatically with this command:
+
+`npm run watch`
+
+After compiling the code you can run the console with this command:
 
 `npm start`
 

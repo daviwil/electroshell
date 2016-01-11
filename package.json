@@ -6,7 +6,9 @@
   "description": "An experimental PowerShell console hosted in Electron.",
   "main": "main.js",
   "scripts": {
-    "start": "electron main.js"
+    "start": "electron out/main.js",
+    "compile": "node ./build.js -p ./",
+    "watch": "node ./build.js -watch -p ./"
   },
   "repository": {
     "type": "git",
@@ -22,7 +24,8 @@
   },
   "homepage": "https://github.com/daviwil/electroshell",
   "devDependencies": {
-    "electron-prebuilt": "^0.36.0"
+    "electron-prebuilt": "^0.36.0",
+    "typescript": "1.7.5"
   },
   "private": true
 }
