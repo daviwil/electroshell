@@ -1,0 +1,28 @@
+{
+  "name": "electroshell",
+  "version": "0.0.1",
+  "author": "David Wilson",
+  "license": "MIT",
+  "description": "An experimental PowerShell console hosted in Electron.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daviwil/electroshell.git"
+  },
+  "keywords": [
+    "PowerShell",
+    "console",
+    "REPL"
+  ],
+  "bugs": {
+    "url": "https://github.com/daviwil/electroshell/issues"
+  },
+  "homepage": "https://github.com/daviwil/electroshell",
+  "devDependencies": {
+    "electron-prebuilt": "^0.36.0"
+  },
+  "private": true
+}
