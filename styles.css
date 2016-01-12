@@ -1,4 +1,27 @@
-body
-{
+@import url(https://fonts.googleapis.com/css?family=Inconsolata|Ubuntu+Mono);
+
+body {
+    color: #FFF;
     background-color: #222;
+    font-family: 'Inconsolata', 'Courier New, Courier, monospace';
+    font-size: 14px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#console {
+    margin: 0px;
+}
+
+.output-line {
+    margin: 3px 3px;
+}
+.output-span {
+    white-space: pre-wrap;
+}
+
+pre {
+    margin: 3px 3px;
+    font-family: 'Inconsolata', 'Courier New, Courier, monospace';
+    font-size: 14px;
 }

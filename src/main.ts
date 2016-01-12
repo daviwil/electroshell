@@ -1,5 +1,10 @@
-import { app, globalShortcut, BrowserWindow } from 'electron';
+'use strict';
+
+import { app, globalShortcut, ipcMain, BrowserWindow } from 'electron';
+import { EditorServicesClient } from './editorServices';
+
 var mainWindow: GitHubElectron.BrowserWindow;
+var editorServicesClient: EditorServicesClient;
 
 function createWindow()
 {
@@ -9,10 +14,7 @@ function createWindow()
             width: 650,
             height: 500,
             autoHideMenuBar: true,
-            title: 'electroshell',
-            webPreferences: {
-                overlayScrollbars: true
-            }
+            title: 'electroshell'
 
             // Enable these to have transparent window background
             //transparent: true,
@@ -35,6 +37,10 @@ function createWindow()
         // Dereference the window object
         mainWindow = null;
     });
+
+    // Start PowerShell Editor Services
+    editorServicesClient = new EditorServicesClient();
+    editorServicesClient.start(mainWindow.webContents);
 }
 
 var shouldQuit = app.makeSingleInstance(function(commandLine, workingDirectory)

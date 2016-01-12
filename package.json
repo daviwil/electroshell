@@ -23,6 +23,9 @@
     "url": "https://github.com/daviwil/electroshell/issues"
   },
   "homepage": "https://github.com/daviwil/electroshell",
+  "dependencies": {
+      "vscode-jsonrpc": "~1.0.1"
+  },
   "devDependencies": {
     "electron-prebuilt": "^0.36.0",
     "typescript": "1.7.5"

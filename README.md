@@ -18,6 +18,8 @@ things go well...
 
 ## Compiling and Running the Code
 
+#### NOTE: This temporarily doesn't work because PowerShell Editor Services has not been packaged for release on NPM yet.  Very soon...
+
 First of all, make sure you have [Node.js](https://nodejs.org/en/) 5.0.0 or later installed.
 
 Install prerequisites by running the following command:
