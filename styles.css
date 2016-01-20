@@ -20,8 +20,12 @@ body {
     white-space: pre-wrap;
 }
 
-pre {
-    margin: 3px 3px;
-    font-family: 'Inconsolata', 'Courier New, Courier, monospace';
-    font-size: 14px;
+.cursor {
+    animation: blink-empty 1s infinite;
+    border-left: transparent solid 1px;
+    margin:5px
+}
+
+@keyframes blink-empty {
+    50% { border-left: 1px solid #FFF; }
 }

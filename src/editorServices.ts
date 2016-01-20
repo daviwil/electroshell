@@ -3,6 +3,7 @@
 import * as cp from 'child_process';
 import ChildProcess = cp.ChildProcess;
 import { createClientMessageConnection, ClientMessageConnection, RequestType, NotificationType, ILogger } from 'vscode-jsonrpc';
+import { ipcMain } from 'electron';
 
 export class EditorServicesClient
 {
@@ -24,13 +25,23 @@ export class EditorServicesClient
         this.clientMessageConnection.onNotification(
             OutputNotification.type,
             (outputBody) => {
-                this.webContents.send("output", outputBody.output);
+                this.webContents.send("console:output", outputBody.output);
             });
 
+        ipcMain.on(
+            'console:execute',
+            (event, commandString) => {
+                this.clientMessageConnection
+                    .sendRequest(
+                        EvaluateRequest.type,
+                        { expression: commandString })
+                    .then(() => {
+                       this.webContents.send("console:executeComplete");
+                    });
+            });
+
+        // Start the message listener
         this.clientMessageConnection.listen();
-        this.clientMessageConnection.sendRequest(
-            EvaluateRequest.type,
-            { expression: "Get-Process" });
     }
 
     stop()
