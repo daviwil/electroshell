@@ -31,7 +31,8 @@ function createWindow()
     });
 
     // Load the index.html of the app
-    mainWindow.loadURL('file://' + __dirname + '/../index.html');
+    //mainWindow.loadURL('file://' + __dirname + '/index.html');
+    mainWindow.loadURL('http://localhost:8080/index.html');
 
     mainWindow.on('closed', function() {
         // Dereference the window object

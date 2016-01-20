@@ -26,17 +26,21 @@ Install prerequisites by running the following command:
 
 `npm install`
 
-Compile the code by running the following command:
+First, compile the code by running the following command:
 
 `npm run compile`
 
-You can also watch all TypeScript files for changes and have them be recompiled automatically with this command:
+Now you can run the test development server with the following command:
 
 `npm run watch`
 
 After compiling the code you can run the console with this command:
 
 `npm start`
+
+The dev server will watch all TypeScript files for changes and then recompile them automatically.
+All .tsx and .css files will also be reloaded in the active application so that you can see your UI
+changes immediately.
 
 ## License
 
